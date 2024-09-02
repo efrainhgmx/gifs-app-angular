@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'shared-sidebar',
@@ -6,8 +6,7 @@ import { Component, OnInit } from '@angular/core';
     styleUrl: './sidebar.component.css'
 })
 
-export class SidebarComponent implements OnInit {
+export class SidebarComponent{
     constructor() { }
 
-    ngOnInit() { }
 }
