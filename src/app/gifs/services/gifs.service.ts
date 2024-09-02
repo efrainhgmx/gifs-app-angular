@@ -12,6 +12,7 @@ export class GifsService {
 
     searchTag( tag:string ):void  {
         this._tagsHistory.unshift(tag);
+        console.log( this.tagsHistory);
     }
     
 }
