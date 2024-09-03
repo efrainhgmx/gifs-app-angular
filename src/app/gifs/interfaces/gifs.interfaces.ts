@@ -1,10 +1,10 @@
 export interface SearchResponse {
-    data:       Giphy[];
+    data:       Gif[];
     meta:       Meta;
     pagination: Pagination;
 }
 
-export interface Giphy {
+export interface Gif {
     type:                       Type;
     id:                         string;
     url:                        string;
