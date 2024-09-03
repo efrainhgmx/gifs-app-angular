@@ -24,12 +24,12 @@ export class GifsService {
 
     this._tagsHistory.unshift(tag);
     this._tagsHistory = this._tagsHistory.splice(0, 10);
+    this.saveLocalStorage();
   }
 
   searchTag(tag: string): void {
     if (!tag) return;
     this.organizeHistory(tag);
-    console.log(this.tagsHistory);
     const params = new HttpParams()
     .set('api_key', this.apiKey)
     .set('limit', '10')
@@ -37,5 +37,9 @@ export class GifsService {
 
     this.http.get<SearchResponse>(`${ this.serviceUrl }/search`, { params })
     .subscribe(response => this.gifList = response.data)
+  }
+
+  private saveLocalStorage():void {
+    localStorage.setItem('history', JSON.stringify(this._tagsHistory));
   }
 }
